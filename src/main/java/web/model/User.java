@@ -1,7 +1,4 @@
 package web.model;
-
-
-
 import javax.persistence.*;
 
 
@@ -9,10 +6,14 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column (name = "firstName")
     private String firstName;
+    @Column (name = "lastName")
     private String lastName;
+    @Column (name = "email")
     private String email;
 
     public User() {

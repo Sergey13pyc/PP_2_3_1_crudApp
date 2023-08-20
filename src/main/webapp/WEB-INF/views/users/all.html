@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:fragment="thymeleaf-fragment" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Мой сайт</title>
+</head>
+<body><h2>Все пользователи</h2>
+<div>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Имя</th>
+            <th>Фамиля</th>
+            <th>email</th>
+
+        </tr>
+
+
+        <tr th:each="user : ${users}">
+        <tr>
+            <td th:text="${user.getId}"></td>
+            <td th:text="${user.getAge}"></td>
+            <td th:text="${user.getName}"></td>
+            <td th:text="${user.getSurname}"></td>
+            <td th:text="${user.getProfession}"></td>
+        </tr>
+        </c:forEach>
+
+    </table>
+        <div>
+
+
+</body>
+</html>
