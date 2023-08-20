@@ -31,7 +31,7 @@ public class WebConfig implements WebMvcConfigurer {
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/views/users/");
         templateResolver.setSuffix(".html");
-        templateResolver.setTemplateMode("HTML5");
+//        templateResolver.setTemplateMode("HTML5");
         templateResolver.setCacheable(false);
         templateResolver.setCharacterEncoding("UTF-8"); //Добавляем, чтобы отображались кириллические символы на web-странице
         return templateResolver;
@@ -49,7 +49,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 
     // Здесь мы задаем шаблонизатор - распознаватель вьюшек. В данном случае - thymeleaf (таймлИф)
-
+    @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
