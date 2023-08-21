@@ -2,24 +2,36 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Новый пользователь</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
+<div class="container" style="margin-top: 25px;">
+    <form th:object="${user}" method="POST" action="/users">
+        <div class="form-group">
+            <label for="firstName">Введите имя: </label>
+            <input type="text" class="form-control" th:field="*{firstName}" id="firstName"/>
+        </div>
+        <div class="form-group" style="margin-top: 10px;">
+            <label for="lastName">Введите фамилию: </label>
+            <input type="text" class="form-control" th:field="*{lastName}" id="lastName"/>
+        </div>
+        <div class="form-group" style="margin-top: 10px;">
+            <label for="email">Введите Email: </label>
+            <input type="text" class="form-control" th:field="*{email}" id="email"/>
+        </div>
 
-<form th:method="POST" th:action="@{/users}" th:object="${user}">
-    <label for="firstName">Введите имя: </label>
-    <input type="text" th:field="*{firstName}" id="firstName"/>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Добавить пользователя"/>
+    </form>
+</div>
 
-    <label for="lastName">Введите фамилию: </label>
-    <input type="text" th:field="*{lastName}" id="lastName"/>
+<!-- Add Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-    <label for="email">Введите Email: </label>
-    <input type="text" th:field="*{email}" id="email"/>
-
-
-<br>
-<input type="submit" value="Создать"/>
-
-</form>
 </body>
 </html>
+

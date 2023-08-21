@@ -30,12 +30,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }
-    // Ниже два метода добавлены д/того, чтобы на стороне Спринга обрабатывалось скрытое hidden-поле "_method",
-    // где находится реальный http-метод, который мы хотим использовать. В нашем случае - PATCH.
-    //Это сделано д/того, чтобы корректно работал метод update в контроллере, у которого аннотация @PatchMapping ("/{id}")
-    //Д/его корректной работы мы ниже создаем фильтр, который будет читать скрытое hidden-поле "_method",
-    // значение которого будет PATCH
-    //В Спринг Boot эти методы можно будет заменить одной строкой
+
 
     @Override
     public void onStartup(ServletContext context) throws ServletException {

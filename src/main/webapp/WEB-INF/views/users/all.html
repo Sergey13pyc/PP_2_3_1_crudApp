@@ -23,8 +23,12 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-<a href="/add">Добавить пользователя</a>
-<a href="/edit">Изменить пользователя</a>
-<a href="/delete">Удалить пользователя</a>
+
+
+<div class="links d-flex flex-column align-items-center justify-content-center" style="height: 50vh;">
+    <a th:href="@{users/add}" class="btn btn-primary mb-2">Добавить пользователя</a>
+
+</div>
+
 </body>
 </html>
