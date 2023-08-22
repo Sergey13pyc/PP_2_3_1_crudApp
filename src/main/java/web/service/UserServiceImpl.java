@@ -21,12 +21,12 @@ public class UserServiceImpl implements UserService{
     public void addUser(User user) {
         userDAO.addUser(user);
     }
-    @Transactional
+
     @Override
     public List<User> getAllUsers() {
         return userDAO.getAllUsers();
     }
-    @Transactional
+
     @Override
     public User getUserById(long id) {
         return userDAO.getUserById(id);
